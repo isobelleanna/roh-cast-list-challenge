@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/roh-cast-list-challenge/static/css/main.2cd9d371.css",
+    "main.js": "/roh-cast-list-challenge/static/js/main.d9b75f20.js",
+    "static/js/787.37f734ae.chunk.js": "/roh-cast-list-challenge/static/js/787.37f734ae.chunk.js",
+    "index.html": "/roh-cast-list-challenge/index.html",
+    "main.2cd9d371.css.map": "/roh-cast-list-challenge/static/css/main.2cd9d371.css.map",
+    "main.d9b75f20.js.map": "/roh-cast-list-challenge/static/js/main.d9b75f20.js.map",
+    "787.37f734ae.chunk.js.map": "/roh-cast-list-challenge/static/js/787.37f734ae.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2cd9d371.css",
+    "static/js/main.d9b75f20.js"
+  ]
+}
