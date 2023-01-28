@@ -11,11 +11,11 @@ upcoming production. Please follow these instructions to complete the task.
 
 Create a simple app that displays the:
 
--   `title`
--   `shortDescription`
--   List of `creatives` associated with the `productions`
-    -   Their `name`s and `role`s
--   List of cast members (`castRoles`) for the performance (`activities`)
+- `title`
+- `shortDescription`
+- List of `creatives` associated with the `productions`
+  - Their `name`s and `role`s
+- List of cast members (`castRoles`) for the performance (`activities`)
 
 #### Production Information
 
@@ -27,7 +27,7 @@ Create a simple app that displays the:
 
 #### Example design
 
-![Example Design](/images/cast-list-challenge.png "Example Design")
+![Example Design](roh/images/cast-list-challenge.png "Example Design")
 
 ## Technical Background
 
