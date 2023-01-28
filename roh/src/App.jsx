@@ -1,5 +1,6 @@
 import "./App.scss";
 import CreativeList from "./containers/CreativeList/CreativeList";
+import Title from "./components/Title/Title";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -31,8 +32,18 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <Title title="Turandot" />
+        <h2 className="App__date">Dates: </h2>
+        <p className="App__para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+          maxime, fugit autem placeat vero officiis iusto sint vel et eius.
+          Eligendi dolore ratione esse iste et deleniti aliquid quo incidunt?
+        </p>
+      </header>
+      <Title title="Creatives" />
       <CreativeList />
+      <Title title="Cast" />
       <p></p>
     </div>
   );
