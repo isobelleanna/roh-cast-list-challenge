@@ -4,6 +4,9 @@ import CastList from "./containers/CastList/CastList";
 import Title from "./components/Title/Title";
 import { useState, useEffect } from "react";
 
+// Note
+// I was having trouble with by browser because of CORS policy so I have called the api using a plugin and then sorted the data from there.
+
 function App() {
   const [performanceDetails, setPerformanceDetails] = useState([
     {
@@ -2653,16 +2656,6 @@ function App() {
       ],
     },
   ]);
-  // const [creativeList, setCreativeList] = useState()
-  // const [castList, setCreativeList] = useState()
-
-  // const getPerformance = async () => {
-  //   const url =
-  //     "https://www.roh.org.uk/api/event-details?slug=turandot-by-andrei-serban";
-  //   const res = await fetch(url);
-  //   const data = await res.json();
-  //   console.log(data);
-  // };
 
   const list = performanceDetails[0].included;
   const performance = list[14].relationships.cast.data;
@@ -2672,7 +2665,6 @@ function App() {
     castID.push(performer.id);
   });
 
-  console.log(castID);
   const formatDate = (date) => {
     return date.slice(0, -15).split("-").reverse().join("/");
   };
