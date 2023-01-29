@@ -4,8 +4,11 @@ import "./CastList.scss";
 const CastList = ({ cast }) => {
   return (
     <ul className="cast-list">
-      <li>list item</li>
-      <li>{cast[0].type}</li>
+      {cast.map((cast) => (
+        <li key={cast.id}>
+          {cast.attributes.role}: {cast.attributes.name}
+        </li>
+      ))}
     </ul>
   );
 };

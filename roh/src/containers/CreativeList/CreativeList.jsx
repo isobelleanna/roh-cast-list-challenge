@@ -4,8 +4,11 @@ import "./CreativeList.scss";
 const CreativeList = ({ creatives }) => {
   return (
     <ul className="creative-list">
-      <li>list item</li>
-      <li>{creatives[0].type}</li>
+      {creatives.map((creative) => (
+        <li key={creative.id}>
+          {creative.attributes.role}: {creative.attributes.name}
+        </li>
+      ))}
     </ul>
   );
 };

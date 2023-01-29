@@ -2665,8 +2665,14 @@ function App() {
   // };
 
   const list = performanceDetails[0].included;
-  console.log(list);
+  const performance = list[14].relationships.cast.data;
+  let castID = [];
 
+  performance.forEach((performer) => {
+    castID.push(performer.id);
+  });
+
+  console.log(castID);
   const formatDate = (date) => {
     return date.slice(0, -15).split("-").reverse().join("/");
   };
@@ -2678,16 +2684,19 @@ function App() {
   const filterByCast = list.filter((cast) => {
     return cast.type.includes("castRoles");
   });
-  console.log(filterByCast);
 
-  console.log(filterByCreative);
+  const currentCast = filterByCast.filter((cast) => {
+    for (let i = 0; i < castID.length; i++) {
+      if (cast.id === castID[i]) {
+        return cast;
+      }
+    }
+    return "";
+  });
+
   useEffect(() => {
     fetch(
-      "https://www.roh.org.uk/api/event-details?slug=turandot-by-andrei-serban",
-      {
-        method: "get",
-        headers: { Accept: "*/*" },
-      }
+      "https://www.roh.org.uk/api/event-details?slug=turandot-by-andrei-serban"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -2714,7 +2723,7 @@ function App() {
       <Title title="Creatives" />
       <CreativeList creatives={filterByCreative} />
       <Title title="Cast" />
-      <CastList cast={filterByCast} />
+      <CastList cast={currentCast} />
     </div>
   );
 }
