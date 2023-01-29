@@ -1,4 +1,12 @@
 @use "./assets/sass/variables" as *;
 .App {
   background-color: $main-background;
+  padding: 30px;
+  &__header {
+    font-family: $font-paragraphs;
+    color: $main-paragraph;
+    &--date {
+      font-size: 15px;
+    }
+  }
 }

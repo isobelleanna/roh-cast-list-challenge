@@ -1,5 +1,6 @@
 @use "../../assets/sass/variables" as *;
 
 .title {
+  font-family: $font-headings;
   color: $main-heading;
 }

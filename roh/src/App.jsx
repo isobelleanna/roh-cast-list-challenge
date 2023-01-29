@@ -2710,13 +2710,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App__header">
         <Title title={performanceDetails[0].data.attributes.title} />
-        <h2 className="App__date">
-          Date:
+        <h2 className="App__header--date">
+          Date-
           {formatDate(performanceDetails[0].included[14].attributes.date)}
         </h2>
-        <p className="App__para">
+        <p className="App__header--body">
           {performanceDetails[0].data.attributes.shortDescription.slice(3, -4)}
         </p>
       </header>
