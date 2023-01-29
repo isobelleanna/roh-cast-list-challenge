@@ -2653,6 +2653,8 @@ function App() {
       ],
     },
   ]);
+  // const [creativeList, setCreativeList] = useState()
+  // const [castList, setCreativeList] = useState()
 
   // const getPerformance = async () => {
   //   const url =
@@ -2661,12 +2663,24 @@ function App() {
   //   const data = await res.json();
   //   console.log(data);
   // };
-  console.log(performanceDetails[0].included[14].attributes.date);
+
+  const list = performanceDetails[0].included;
+  console.log(list);
 
   const formatDate = (date) => {
     return date.slice(0, -15).split("-").reverse().join("/");
   };
 
+  const filterByCreative = list.filter((creative) => {
+    return creative.type.includes("creatives");
+  });
+
+  const filterByCast = list.filter((cast) => {
+    return cast.type.includes("castRoles");
+  });
+  console.log(filterByCast);
+
+  console.log(filterByCreative);
   useEffect(() => {
     fetch(
       "https://www.roh.org.uk/api/event-details?slug=turandot-by-andrei-serban",
@@ -2690,7 +2704,7 @@ function App() {
       <header className="App-header">
         <Title title={performanceDetails[0].data.attributes.title} />
         <h2 className="App__date">
-          Dates:{" "}
+          Date:
           {formatDate(performanceDetails[0].included[14].attributes.date)}
         </h2>
         <p className="App__para">
@@ -2698,9 +2712,9 @@ function App() {
         </p>
       </header>
       <Title title="Creatives" />
-      <CreativeList />
+      <CreativeList creatives={filterByCreative} />
       <Title title="Cast" />
-      <CastList />
+      <CastList cast={filterByCast} />
     </div>
   );
 }
