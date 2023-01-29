@@ -1,10 +1,11 @@
 import "./App.scss";
 import CreativeList from "./containers/CreativeList/CreativeList";
+import CastList from "./containers/CastList/CastList";
 import Title from "./components/Title/Title";
 import { useState, useEffect } from "react";
 
 function App() {
-  // const [performanceDetails, setPerformanceDetails] = useState([]);
+  const [performanceDetails, setPerformanceDetails] = useState([]);
 
   // const getPerformance = async () => {
   //   const url =
@@ -24,6 +25,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setPerformanceDetails(data);
       })
       .catch((err) => {
         console.log("error");
@@ -44,7 +46,7 @@ function App() {
       <Title title="Creatives" />
       <CreativeList />
       <Title title="Cast" />
-      <p></p>
+      <CastList />
     </div>
   );
 }
